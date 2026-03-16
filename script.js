@@ -1,4 +1,16 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyCAH-sgIsTke35M1WZE5mZqUu4OnxoYETw",
+  authDomain: "registro-tareas-1915d.firebaseapp.com",
+  databaseURL: "https://registro-tareas-1915d-default-rtdb.firebaseio.com",
+  projectId: "registro-tareas-1915d",
+  storageBucket: "registro-tareas-1915d.appspot.com",
+  messagingSenderId: "125646839483",
+  appId: "1:125646839483:web:7a94914e78bc8aa00a139e"
+};
 
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.database().ref("tareas");
 
 firebase.initializeApp(firebaseConfig);
 
