@@ -10,6 +10,7 @@
   const firebaseConfig = {
     apiKey: "AIzaSyCAH-sgIsTke35M1WZE5mZqUu4OnxoYETw",
     authDomain: "registro-tareas-1915d.firebaseapp.com",
+    databaseURL: "https://registro-tareas-1915d-default-rtdb.firebaseio.com",
     projectId: "registro-tareas-1915d",
     storageBucket: "registro-tareas-1915d.firebasestorage.app",
     messagingSenderId: "125646839483",
