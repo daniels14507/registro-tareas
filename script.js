@@ -12,10 +12,6 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.database().ref("tareas");
 
-firebase.initializeApp(firebaseConfig);
-
-const db = firebase.database().ref("tareas");
-
 function guardar(){
 
 let tarea = {
