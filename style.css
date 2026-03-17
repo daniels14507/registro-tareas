@@ -58,6 +58,7 @@ body{
 /* TABLA DERECHA */
 .tabla-contenedor{
   width: 60%;
+  overflow-x: auto; /* 🔥 IMPORTANTE */
 }
 
 /* INPUTS */
@@ -110,21 +111,3 @@ td, th{
 
 
 
-@media (max-width:600px){
-
-table, thead, tbody, th, td, tr{
-display:block;
-}
-
-tr{
-margin-bottom:15px;
-border:1px solid #ccc;
-padding:10px;
-}
-
-td{
-text-align:left;
-border:none;
-}
-
-}
