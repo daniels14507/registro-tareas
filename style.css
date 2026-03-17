@@ -9,8 +9,12 @@ input, textarea{
 width:100%;
 padding:6px;
 margin-bottom:10px;
+font-size: 16px;
 }
 
+select{
+  font-size: 16px;
+}
 table{
 width:100%;
 border-collapse:collapse;
@@ -42,17 +46,18 @@ body{
   display: flex;
   gap: 20px;
   padding: 20px;
+  align-items: flex-start;
 }
 
 /* FORMULARIO IZQUIERDA */
 .formulario{
-  width: 35%;
+  width: 40%;
+  max-width: 400px;
 }
 
 /* TABLA DERECHA */
 .tabla-contenedor{
-  width: 65%;
-  overflow-x: auto;
+  width: 60%;
 }
 
 /* INPUTS */
@@ -93,11 +98,13 @@ td, th{
     width: 100%;
   }
 
-}
-
-h2{
+  h2{
   text-align: center;
 }
+
+}
+
+
 
 
 
