@@ -32,8 +32,11 @@ cursor:pointer;
 body{
   font-family: Arial;
   margin:0;
-  padding: 10px;
-  
+  padding:10px;
+  background-image: url("https://images.pexels.com/photos/697259/pexels-photo-697259.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* CONTENEDOR GENERAL */
@@ -43,6 +46,8 @@ body{
   padding: 10px;
   max-width: 1000px;
   margin: auto;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
 }
 
 /* FORMULARIO IZQUIERDA */
