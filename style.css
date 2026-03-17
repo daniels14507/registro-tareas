@@ -32,21 +32,17 @@ cursor:pointer;
 body{
   font-family: Arial;
   margin:0;
-  padding: 0;
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10px;
+  
 }
 
 /* CONTENEDOR GENERAL */
 .contenedor{
   display: flex;
   gap: 20px;
-  padding: 20px;
+  padding: 10px;
   max-width: 1000px;
-  width: 100%;
+  margin: auto;
 }
 
 /* FORMULARIO IZQUIERDA */
