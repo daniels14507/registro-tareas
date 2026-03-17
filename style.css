@@ -94,7 +94,7 @@ td, th{
 @media (max-width: 768px){
 
   .tabla-contenedor{
-    width: 60%;
+    width: 100%;
     overflow-x: auto;
   }
 
