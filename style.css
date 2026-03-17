@@ -74,8 +74,8 @@ button{
 
 /* TABLA */
 table{
-  width: 100%;
-  max-width: 100%;
+  width: auto;
+  margin: auto;
   border-collapse: collapse;
 }
 
@@ -89,9 +89,8 @@ td, th{
 @media (max-width: 768px){
 
   .tabla-contenedor{
-    width: 100%;
+    width: 60%;
     overflow-x: auto;
-    display: block;
   }
 
   .contenedor{
