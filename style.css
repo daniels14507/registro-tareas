@@ -31,6 +31,76 @@ cursor:pointer;
 
 
 
+body{
+  font-family: Arial;
+  margin:0;
+  padding:0;
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor{
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FORMULARIO IZQUIERDA */
+.formulario{
+  width: 35%;
+}
+
+/* TABLA DERECHA */
+.tabla-contenedor{
+  width: 65%;
+  overflow-x: auto;
+}
+
+/* INPUTS */
+input, select, textarea{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* BOTÓN */
+button{
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* TABLA */
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th{
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+/* 🔥 RESPONSIVE PARA CELULAR */
+@media (max-width: 768px){
+
+  .contenedor{
+    flex-direction: column;
+  }
+
+  .formulario,
+  .tabla-contenedor{
+    width: 100%;
+  }
+
+}
+
+h2{
+  text-align: center;
+}
+
+
+
 
 
 @media (max-width:600px){
