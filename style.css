@@ -94,6 +94,10 @@ td, th{
 /* 🔥 RESPONSIVE PARA CELULAR */
 @media (max-width: 768px){
 
+  table{
+  min-width: 700px; /* 🔥 evita que se aplaste */
+}
+
   .tabla-contenedor{
     width: 100%;
     overflow-x: auto;
