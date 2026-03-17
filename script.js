@@ -85,10 +85,14 @@ let datos = snapshot.val();
 let tabla = document.getElementById("tabla");
 
 tabla.innerHTML="";
-
+  
+let total = 0;
+  
 for(let id in datos){
 
 let t = datos[id];
+
+total += calcularHoras(t.inicio, t.fin);
 
 tabla.innerHTML += `
 <tr>
@@ -109,6 +113,8 @@ tabla.innerHTML += `
 `;
 
 }
+document.getElementById("totalHoras").innerText =
+"Total horas: " + total.toFixed(2);  
 
 });
 
@@ -143,6 +149,30 @@ document.getElementById("fin").value = t.fin;
 editandoId = id;
 
 });
+
+}
+
+function calcularHoras(inicio, fin){
+
+if(!inicio || !fin) return 0;
+
+function convertirAMPM(hora){
+
+let [tiempo, periodo] = hora.split(" ");
+let [h, m] = tiempo.split(":").map(Number);
+
+if(periodo === "PM" && h !== 12) h += 12;
+if(periodo === "AM" && h === 12) h = 0;
+
+return h*60 + m;
+}
+
+let inicioMin = convertirAMPM(inicio);
+let finMin = convertirAMPM(fin);
+
+let diferencia = (finMin - inicioMin) / 60;
+
+return diferencia > 0 ? diferencia : 0;
 
 }
 
