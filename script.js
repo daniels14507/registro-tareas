@@ -22,8 +22,60 @@ inicio: document.getElementById("inicio").value,
 fin: document.getElementById("fin").value
 };
 
+if(editandoId){
+
+db.child(editandoId).update(tarea);
+editandoId = null;
+
+}else{
+
 db.push(tarea);
 
+}
+
+limpiarFormulario();
+
+}
+
+function limpiarFormulario(){
+
+document.getElementById("dia").value="";
+document.getElementById("tarea").value="";
+document.getElementById("descripcion").value="";
+document.getElementById("inicio").value="";
+document.getElementById("fin").value="";
+
+}
+
+function formatoHora(hora){
+
+if(!hora) return "";
+
+let [h,m] = hora.split(":");
+h = parseInt(h);
+
+let ampm = h >= 12 ? "PM" : "AM";
+h = h % 12 || 12;
+
+return `${h}:${m} ${ampm}`;
+}
+
+function calcularHoras(inicio,fin){
+
+if(!inicio || !fin) return "";
+
+let [h1,m1] = inicio.split(":").map(Number);
+let [h2,m2] = fin.split(":").map(Number);
+
+let inicioMin = h1*60 + m1;
+let finMin = h2*60 + m2;
+
+let diff = finMin - inicioMin;
+
+let horas = Math.floor(diff/60);
+let min = diff % 60;
+
+return `${horas}h ${min}m`;
 }
 
 db.on("value", snapshot=>{
@@ -41,33 +93,15 @@ let t = datos[id];
 tabla.innerHTML += `
 <tr>
 
-<td>
-<input type="checkbox" class="check" value="${id}">
-</td>
-
 <td>${t.dia}</td>
-
-<td contenteditable="true"
-onblur="editar('${id}','tarea',this.innerText)">
-${t.tarea}
-</td>
-
-<td contenteditable="true"
-onblur="editar('${id}','descripcion',this.innerText)">
-${t.descripcion}
-</td>
-
-<td contenteditable="true"
-onblur="editar('${id}','inicio',this.innerText)">
-${t.inicio}
-</td>
-
-<td contenteditable="true"
-onblur="editar('${id}','fin',this.innerText)">
-${t.fin}
-</td>
+<td>${t.tarea}</td>
+<td>${t.descripcion}</td>
+<td>${formatoHora(t.inicio)}</td>
+<td>${formatoHora(t.fin)}</td>
+<td>${calcularHoras(t.inicio,t.fin)}</td>
 
 <td>
+<button onclick="cargarEditar('${id}')">Editar</button>
 <button onclick="eliminar('${id}')">Eliminar</button>
 </td>
 
@@ -92,24 +126,23 @@ db.child(id).remove();
 
 }
 
-function eliminarSeleccionadas(){
+let editandoId = null;
 
-let checks = document.querySelectorAll(".check:checked");
+function cargarEditar(id){
 
-checks.forEach(c=>{
+db.child(id).once("value", snap=>{
 
-db.child(c.value).remove();
+let t = snap.val();
+
+document.getElementById("dia").value = t.dia;
+document.getElementById("tarea").value = t.tarea;
+document.getElementById("descripcion").value = t.descripcion;
+document.getElementById("inicio").value = t.inicio;
+document.getElementById("fin").value = t.fin;
+
+editandoId = id;
 
 });
 
 }
 
-function eliminarTodas(){
-
-if(confirm("Eliminar todas las tareas?")){
-
-db.remove();
-
-}
-
-}
