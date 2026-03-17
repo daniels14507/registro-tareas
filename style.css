@@ -61,7 +61,7 @@ body{
   width: 60%;
   display: flex;
   overflow-x: auto;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* INPUTS */
@@ -98,6 +98,7 @@ td, th{
   .tabla-contenedor{
     width: 100%;
     overflow-x: auto;
+    justify-content: flex-start;
   }
 
   .contenedor{
