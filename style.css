@@ -91,12 +91,16 @@ td, th{
   text-align: center;
 }
 
+th:first-child,
+td:first-child{
+  position: sticky;
+  left: 0;
+  background: white; /* 🔥 importante */
+  z-index: 2;
+}
+
 /* 🔥 RESPONSIVE PARA CELULAR */
 @media (max-width: 768px){
-
-  table{
-  min-width: 700px; /* 🔥 evita que se aplaste */
-}
 
   .tabla-contenedor{
     width: 100%;
