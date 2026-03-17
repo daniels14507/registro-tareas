@@ -54,7 +54,8 @@ body{
 /* TABLA DERECHA */
 .tabla-contenedor{
   width: 60%;
-  overflow-x: auto; /* 🔥 IMPORTANTE */
+  display: flex;
+  justify-content: center;
 }
 
 /* INPUTS */
@@ -74,6 +75,7 @@ button{
 /* TABLA */
 table{
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
 }
 
@@ -86,9 +88,10 @@ td, th{
 /* 🔥 RESPONSIVE PARA CELULAR */
 @media (max-width: 768px){
 
-  body{
+  .tabla-contenedor{
+    width: 100%;
+    overflow-x: auto;
     display: block;
-    padding: 10px;
   }
 
   .contenedor{
