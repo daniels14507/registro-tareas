@@ -88,6 +88,7 @@ td, th{
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* 🔥 RESPONSIVE PARA CELULAR */
