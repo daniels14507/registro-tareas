@@ -10,56 +10,60 @@
 
 </head>
 
-<div class="contenedor">
+
 <body>
 
-<h2>Registro de Tareas</h2>
+<div class="contenedor">
 
-<label>Día</label>
-<input type="date" id="dia">
+  <!-- IZQUIERDA -->
+  <div class="formulario">
 
-<label>Tarea</label>
-<input type="text" id="tarea">
+    <h2>Registro de Tareas</h2>
 
-<label>Descripción</label>
-<textarea id="descripcion"></textarea>
+    <!-- TODOS tus inputs van aquí -->
+    <label>Día</label>
+    <input type="date" id="dia">
 
-<label>Hora inicio</label>
-<input type="time" id="inicio">
+    <label>Tarea</label>
+    <input type="text" id="tarea">
 
-<label>Hora final</label>
-<input type="time" id="fin">
+    <label>Descripción</label>
+    <textarea id="descripcion"></textarea>
 
-<br><br>
+    <label>Hora inicio</label>
+    <input type="time" id="inicio">
 
-<button onclick="guardar()">Guardar</button>
+    <label>Hora final</label>
+    <input type="time" id="fin">
 
-<hr>
+    <button onclick="guardar()">Guardar</button>
 
-<table>
+  </div>
 
-<thead>
-<tr>
-<th>Día</th>
-<th>Tarea</th>
-<th>Descripción</th>
-<th>Inicio</th>
-<th>Fin</th>
-<th>Horas</th>
-<th>Acción</th>
-  
-</tr>
-</thead>
+  <!-- DERECHA -->
+  <div class="tabla-contenedor">
 
-<tbody id="tabla"></tbody>
+    <table>
+      <thead>
+        <tr>
+          <th>Día</th>
+          <th>Tarea</th>
+          <th>Descripción</th>
+          <th>Inicio</th>
+          <th>Fin</th>
+          <th>Horas</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
 
-</table>
+      <tbody id="tabla"></tbody>
+    </table>
 
-<br>
+  </div>
 
+</div>
 
 <script src="script.js"></script>
 
 </body>
-</div>
 </html>
