@@ -90,6 +90,13 @@ td, th{
   text-align: center;
 }
 
+h3{
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 /* 🔥 RESPONSIVE PARA CELULAR */
 @media (max-width: 768px){
 
