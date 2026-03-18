@@ -86,13 +86,24 @@ let tabla = document.getElementById("tabla");
 
 tabla.innerHTML="";
   
-
+let totalMinutos = 0;
   
 for(let id in datos){
 
 let t = datos[id];
 
+if(t.inicio && t.fin){
 
+  let [h1,m1] = t.inicio.split(":").map(Number);
+  let [h2,m2] = t.fin.split(":").map(Number);
+
+  let inicioMin = h1 * 60 + m1;
+  let finMin = h2 * 60 + m2;
+
+  let diferencia = finMin - inicioMin;
+
+  totalMinutos += diferencia;
+}
 
 tabla.innerHTML += `
 <tr>
@@ -113,7 +124,12 @@ tabla.innerHTML += `
 `;
 
 }
-  
+
+  let horas = Math.floor(totalMinutos / 60);
+let minutos = totalMinutos % 60;
+
+document.getElementById("totalHoras").innerText =
+  horas + " h, " + minutos + " min";
 
 });
 
