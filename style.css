@@ -93,8 +93,9 @@ td, th{
 
 .acciones{
   display: flex;
+  justify-content: center; /* 👈 centra todo */
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* espacio entre botón y texto */
   margin-top: 10px;
 }
 
