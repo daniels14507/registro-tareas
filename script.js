@@ -129,7 +129,7 @@ tabla.innerHTML += `
 let minutos = totalMinutos % 60;
 
 document.getElementById("totalHoras").innerText =
-  horas + " h, " + minutos + " min";
+  "Tot: " + horas + " h, " + minutos + " min";
 
 });
 
