@@ -91,6 +91,18 @@ td, th{
   text-align: center;
 }
 
+.acciones{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.total-horas{
+  font-size: 16px;
+  font-weight: bold;
+}
+
 
 /* 🔥 RESPONSIVE PARA CELULAR */
 @media (max-width: 768px){
